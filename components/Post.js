@@ -67,7 +67,7 @@ function Post({id, post}) {
             ) : (
               <HeartIconLine onClick={likePost} className='btn'/>              
             )}
-            <ChatIcon className='btn'/>
+            <ChatIcon className='btn cursor-not-allowed' />
             <PaperAirplaneIcon className='btn'/>
           </div>
 
