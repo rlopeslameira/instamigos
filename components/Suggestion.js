@@ -30,7 +30,7 @@ function Suggestion() {
               <h3 className='text-xs text-gray-400'>Works at {profile.company.name}</h3>
             </div>
 
-            <button className='text-sm text-blue-400'>Follow</button>
+            <button className='text-sm text-blue-400 dontworking'>Follow</button>
 
           </div>
         ))

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ChatIcon, DotsHorizontalIcon, PaperAirplaneIcon, HeartIcon as HeartIconLine, BookmarkIcon, EmojiHappyIcon } from '@heroicons/react/outline'
 import { HeartIcon } from '@heroicons/react/solid'
 
@@ -13,6 +13,8 @@ function Post({id, post}) {
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
   const [haslike, setHaslike] = useState(false);
+
+  const refComment = useRef(null);
 
   useEffect(() => onSnapshot(query(collection(db, 'posts', id, 'comments'), orderBy('timestamp', 'desc')), (snapshot) => {
     setComments(snapshot.docs)
@@ -67,11 +69,11 @@ function Post({id, post}) {
             ) : (
               <HeartIconLine onClick={likePost} className='btn'/>              
             )}
-            <ChatIcon className='btn cursor-not-allowed' />
-            <PaperAirplaneIcon className='btn'/>
+            <ChatIcon className='btn' onClick={e => refComment.current.focus()} />
+            <PaperAirplaneIcon className='btn rotate-45 dontworking'/>
           </div>
 
-          <BookmarkIcon className='btn'/>
+          <BookmarkIcon className='btn dontworking'/>
         </div>
       )}
 
@@ -102,6 +104,7 @@ function Post({id, post}) {
         <form className='flex items-center p-4'>
           <EmojiHappyIcon className='h-7'/>
           <input type="text" placeholder='Add a comment...'
+          ref={refComment}
           value={comment} 
           onChange={(e) => setComment(e.target.value)}                    
           className='border-none flex-1 focus:ring-0 outline-none'/>
