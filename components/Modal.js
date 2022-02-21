@@ -32,8 +32,6 @@ function Modal() {
 
         })
 
-        console.log('New Doc added with ID', docRef.id);
-
         const imageRef = ref(storage, `posts/${session.user.username}/${docRef.id}`);
 
         await uploadString(imageRef, selectedFile, "data_url").then(async snapshot => {
