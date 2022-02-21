@@ -8,15 +8,15 @@ function Signin({providers}) {
     <>
       <Header />
       <div className='flex flex-col items-center justify-center 
-      min-h-screen py-2 -mt-56 px-14 text-center'>
+      min-h-screen py-2 -my-20 px-14 text-center'>
         <img src='/images/logo.png' className='w-80'/> 
         
-        <p className='font-xs italic'>
+        <p className='font-xs italic pt-20' >
           This application was developed for 
           educational purposes by  <a className='underline' href='mailto:rlopeslameira@gmail.com' target="_blank">Rodrigo Lopes</a>
         </p>
 
-        <div className='mt-40 '>
+        <div className='pt-20'>
           {Object.values(providers).map(provider => (
             <div key={provider.name}>
               <button 
