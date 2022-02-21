@@ -1,4 +1,4 @@
-import NextAuth from "next-auth/next"
+import NextAuth from "next-auth"
 import GoogleProvider from 'next-auth/providers/google'
 
 export default NextAuth({
@@ -18,9 +18,4 @@ export default NextAuth({
       return session;
     }
   },
-  theme: {
-    colorScheme: "auto", // "auto" | "dark" | "light"
-    brandColor: "", // Hex color code
-    logo: "https://aplicativomaisescola.online/instamigos.png" // Absolute URL to image
-  }
 })

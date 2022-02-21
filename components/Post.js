@@ -50,7 +50,6 @@ function Post({id, post}) {
 
   return (
     <div className='bg-white my-7 border rounded-sm'>
-      {/* POST USER HEADER */}
       <div className='flex items-center p-5'>
         <img src={post.profileImg} className="rounded-full h-12 object-contain border
         p-1 mr-3"/>
@@ -58,7 +57,6 @@ function Post({id, post}) {
         <DotsHorizontalIcon className='h-5 '/>
       </div>
       
-      {/* PHOTO */}
       <img src={post.image} className="object-cover w-full"/>
 
       {session && (
@@ -78,13 +76,13 @@ function Post({id, post}) {
       )}
 
       {/* CAPTION */}
-      <p className='p-5 truncate'>
+      <div className='p-5 truncate'>
         {likes.length > 0 && (
           <p className='font-bold'>{likes.length} likes</p>
         )}
         <span className='font-bold mr-1'>{post.username}:</span>
         {post.caption}
-      </p>
+      </div>
 
       {comments.length > 0 && (
         <div className='ml-10 max-h-40 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
